@@ -410,78 +410,142 @@
       font-weight: 700;
     }
 
+    .contact-bar {
+      background: linear-gradient(135deg, #063c9c, #00a6a6);
+      color: white;
+      padding: 14px 0;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .contact-bar a {
+      color: white;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 8px 16px;
+      border-radius: 999px;
+      margin-left: 8px;
+      display: inline-block;
+    }
+
+    .contact-section {
+      background: #ffffff;
+    }
+
+    .contact-card {
+      max-width: 900px;
+      margin: auto;
+      background: linear-gradient(135deg, #eaf4ff, #ffffff 55%, #e9fffb);
+      border: 1px solid #dbe7f5;
+      border-radius: 30px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 25px;
+      box-shadow: 0 18px 45px rgba(19, 99, 223, 0.11);
+    }
+
+    .contact-card h2 {
+      font-size: 34px;
+      color: #10213f;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: #4d5b70;
+      font-size: 17px;
+    }
+
+    .call-box {
+      min-width: 250px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+      border: 1px solid #e5edf7;
+    }
+
+    .call-icon {
+      width: 66px;
+      height: 66px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: #00a6a6;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 10px 25px rgba(0, 166, 166, 0.28);
+    }
+
+    .call-number {
+      display: block;
+      font-size: 22px;
+      font-weight: 900;
+      color: #063c9c;
+      margin: 8px 0 16px;
+    }
+
+    .floating-call {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #00a6a6;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 12px 30px rgba(0, 166, 166, 0.35);
+      border: 4px solid white;
+    }
+
+    .floating-call:hover {
+      background: #008484;
+      transform: translateY(-3px);
+    }
+
     .booking-section {
       background: #ffffff;
     }
 
-    .booking-form {
-      max-width: 850px;
+    .google-form-box {
+      max-width: 950px;
       margin: auto;
       background: #ffffff;
-      padding: 35px;
+      padding: 22px;
       border-radius: 28px;
       box-shadow: 0 18px 45px rgba(19, 99, 223, 0.11);
       border: 1px solid #e5edf7;
+      overflow: hidden;
     }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .form-group.full {
-      grid-column: 1 / -1;
-    }
-
-    .form-group label {
-      font-size: 14px;
-      font-weight: 800;
-      color: #10213f;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .google-form-box iframe {
       width: 100%;
-      padding: 14px 15px;
-      border: 1.5px solid #dbe7f5;
-      border-radius: 14px;
-      font-size: 15px;
-      outline: none;
-      background: #f8fbff;
-      color: #152238;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: #1363df;
+      min-height: 980px;
+      border: none;
+      border-radius: 18px;
       background: #ffffff;
-      box-shadow: 0 0 0 4px rgba(19, 99, 223, 0.08);
-    }
-
-    .form-group textarea {
-      min-height: 105px;
-      resize: vertical;
     }
 
     .form-help {
-      margin: 18px 0 24px;
+      margin: 0 auto 24px;
       color: #64748b;
-      font-size: 14px;
+      font-size: 15px;
       text-align: center;
+      max-width: 760px;
     }
 
-    .form-submit {
-      width: 100%;
-      font-size: 16px;
+    .open-form-link {
+      text-align: center;
+      margin-top: 18px;
     }
 
     .cta {
@@ -605,6 +669,29 @@
         text-align: center;
       }
 
+      .contact-bar a {
+        margin-top: 8px;
+        margin-left: 0;
+      }
+
+      .contact-card {
+        grid-template-columns: 1fr;
+        padding: 26px;
+        text-align: center;
+      }
+
+      .call-box {
+        min-width: auto;
+        width: 100%;
+      }
+
+      .floating-call {
+        width: 56px;
+        height: 56px;
+        right: 16px;
+        bottom: 16px;
+      }
+
       .form-grid {
         grid-template-columns: 1fr;
       }
@@ -616,6 +703,10 @@
   </style>
 </head>
 <body>
+  <div class="contact-bar">
+    Need laundry pickup? Call us now <a href="tel:919057135969">☎ 919057135969</a>
+  </div>
+
   <header>
     <div class="container navbar">
       <a href="#" class="brand-logo" aria-label="FoldIt Home">
@@ -652,7 +743,8 @@
         <a href="#process">How It Works</a>
         <a href="#pricing">Pricing</a>
         <a href="#areas">Areas</a>
-        <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20to%20book%20a%20laundry%20pickup." target="_blank">Book Pickup</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#booking">Book Pickup</a>
       </nav>
     </div>
   </header>
@@ -664,7 +756,7 @@
           <h1>Doorstep laundry with <span>no-mix batch care.</span></h1>
           <p>FoldIt makes daily laundry simple, reliable and professional with verified local partners, sealed pickup, quality checks and on-time delivery.</p>
           <div class="hero-actions">
-            <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20to%20book%20a%20laundry%20pickup." target="_blank">Book on WhatsApp</a>
+            <a class="btn" href="#booking">Book Pickup</a>
             <a class="btn btn-secondary" href="#pricing">View Pricing</a>
           </div>
         </div>
@@ -761,7 +853,7 @@
               <li>Neat folding</li>
               <li>Single-batch care</li>
             </ul>
-            <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20Wash%20%26%20Fold%20service." target="_blank">Choose Plan</a>
+            <a class="btn" href="#booking">Choose Plan</a>
           </div>
 
           <div class="price-card featured">
@@ -775,7 +867,7 @@
               <li>Quality check</li>
               <li>Doorstep delivery</li>
             </ul>
-            <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20Wash%20%26%20Iron%20service." target="_blank">Choose Plan</a>
+            <a class="btn" href="#booking">Choose Plan</a>
           </div>
 
           <div class="price-card">
@@ -791,7 +883,7 @@
               <li>1 Pyajama</li>
               <li>1 Kid Shirt / T-shirt</li>
             </ul>
-            <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20the%20Family%20Laundry%20combo%20worth%20Rs.%20100." target="_blank">Choose Combo</a>
+            <a class="btn" href="#booking">Choose Combo</a>
           </div>
         </div>
       </div>
@@ -842,64 +934,39 @@
       </div>
     </section>
 
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2>Contact FoldIt</h2>
+            <p>Need doorstep laundry pickup, pricing help, or service details? Call us directly and our team will help you book your laundry pickup.</p>
+          </div>
+          <div class="call-box">
+            <div class="call-icon">☎</div>
+            <strong>Call / WhatsApp</strong>
+            <a class="call-number" href="tel:919057135969">919057135969</a>
+            <a class="btn" href="tel:919057135969">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="booking-section" id="booking">
       <div class="container">
         <div class="section-title">
           <h2>Book Your Laundry Pickup</h2>
-          <p>Fill your details once and send the complete order directly to FoldIt on WhatsApp.</p>
+          <p>Fill the booking form below. Your details will be received by FoldIt directly through Google Forms.</p>
         </div>
 
-        <form class="booking-form" id="bookingForm">
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="customerName">Name</label>
-              <input type="text" id="customerName" placeholder="Enter your name" required />
-            </div>
+        <p class="form-help">After submitting the form, our team will call or WhatsApp you shortly for pickup confirmation.</p>
 
-            <div class="form-group">
-              <label for="mobileNumber">Mobile Number</label>
-              <input type="tel" id="mobileNumber" placeholder="Enter your mobile number" required />
-            </div>
+        <div class="google-form-box">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-RT3L_e_5Wb_-7C50IVTV-OSRRjA5MQwEoqb4uwuxNWD0SA/viewform?embedded=true" loading="lazy">Loading…</iframe>
+        </div>
 
-            <div class="form-group">
-              <label for="societyArea">Society / Area</label>
-              <input type="text" id="societyArea" placeholder="Example: Sector 78, Noida" required />
-            </div>
-
-            <div class="form-group">
-              <label for="pickupTime">Preferred Pickup Time</label>
-              <input type="text" id="pickupTime" placeholder="Example: Today 6 PM - 8 PM" required />
-            </div>
-
-            <div class="form-group full">
-              <label for="pickupAddress">Pickup Address</label>
-              <input type="text" id="pickupAddress" placeholder="Enter full pickup address" required />
-            </div>
-
-            <div class="form-group">
-              <label for="serviceNeeded">Service Needed</label>
-              <select id="serviceNeeded" required>
-                <option value="">Select service</option>
-                <option value="Wash & Fold - ₹20/piece">Wash & Fold - ₹20/piece</option>
-                <option value="Wash & Iron - ₹25/piece">Wash & Iron - ₹25/piece</option>
-                <option value="Family Laundry Combo - ₹100">Family Laundry Combo - ₹100</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="approxClothes">Approx Clothes / KG</label>
-              <input type="text" id="approxClothes" placeholder="Example: 10 clothes or 5 kg" required />
-            </div>
-
-            <div class="form-group full">
-              <label for="specialInstruction">Special Instruction</label>
-              <textarea id="specialInstruction" placeholder="Example: Please call before pickup, separate white clothes, etc."></textarea>
-            </div>
-          </div>
-
-          <p class="form-help">After clicking the button, WhatsApp will open with your complete booking details. Please press send on WhatsApp.</p>
-          <button type="submit" class="btn form-submit">Send Booking Details on WhatsApp</button>
-        </form>
+        <div class="open-form-link">
+          <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSd-RT3L_e_5Wb_-7C50IVTV-OSRRjA5MQwEoqb4uwuxNWD0SA/viewform" target="_blank">Open Booking Form</a>
+        </div>
       </div>
     </section>
 
@@ -913,6 +980,8 @@
       </div>
     </section>
   </main>
+
+  <a class="floating-call" href="tel:919057135969" aria-label="Call FoldIt">☎</a>
 
   <footer>
     <div class="container">
@@ -949,26 +1018,5 @@
       <p>© 2026 FoldIt. All rights reserved.</p>
     </div>
   </footer>
-<script>
-    document.getElementById("bookingForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("customerName").value.trim();
-      const mobile = document.getElementById("mobileNumber").value.trim();
-      const society = document.getElementById("societyArea").value.trim();
-      const address = document.getElementById("pickupAddress").value.trim();
-      const service = document.getElementById("serviceNeeded").value;
-      const clothes = document.getElementById("approxClothes").value.trim();
-      const pickupTime = document.getElementById("pickupTime").value.trim();
-      const instruction = document.getElementById("specialInstruction").value.trim() || "No special instruction";
-
-      const message = `Hi FoldIt, I want to book a laundry pickup.\n\nName: ${name}\nMobile Number: ${mobile}\nSociety/Area: ${society}\nPickup Address: ${address}\nService Needed: ${service}\nApprox Clothes/KG: ${clothes}\nPreferred Pickup Time: ${pickupTime}\nSpecial Instruction: ${instruction}`;
-
-      const whatsappNumber = "919057135969";
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-      window.open(whatsappURL, "_blank");
-    });
-  </script>
 </body>
 </html>
