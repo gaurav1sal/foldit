@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoldIt | Doorstep Laundry & Garment Care</title>
+  <meta name="description" content="FoldIt provides reliable doorstep laundry, wash, iron, fold and delivery with verified partners and no-mix batch control." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f8fbff;
+      color: #152238;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    header {
+      background: #ffffff;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 58px;
+      height: 58px;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      font-size: 31px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      color: #063c9c;
+      line-height: 1;
+    }
+
+    .brand-text span {
+      color: #00b8b8;
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 4px;
+      font-size: 10px;
+      letter-spacing: 1.8px;
+      font-weight: 800;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #1363df;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      background: #1363df;
+      color: white;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #0d4fb3;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #00a6a6;
+    }
+
+    .btn-secondary:hover {
+      background: #008484;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      background: linear-gradient(135deg, #eaf4ff 0%, #ffffff 60%, #e9fffb 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero h1 {
+      font-size: 54px;
+      line-height: 1.1;
+      margin-bottom: 22px;
+      color: #10213f;
+    }
+
+    .hero h1 span {
+      color: #1363df;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #4d5b70;
+      margin-bottom: 30px;
+      max-width: 610px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background: white;
+      padding: 35px;
+      border-radius: 28px;
+      box-shadow: 0 20px 45px rgba(19, 99, 223, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      width: 160px;
+      height: 160px;
+      background: #dff7ff;
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      border-radius: 50%;
+    }
+
+    .laundry-icon {
+      font-size: 70px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .hero-card li {
+      margin-bottom: 12px;
+      color: #34445c;
+      font-weight: 600;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: #00a6a6;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #10213f;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #64748b;
+      font-size: 17px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
+    }
+
+    .card .icon {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #10213f;
+    }
+
+    .card p {
+      color: #64748b;
+    }
+
+    .how-it-works {
+      background: #ffffff;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 25px 18px;
+    }
+
+    .step-number {
+      width: 58px;
+      height: 58px;
+      background: #1363df;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .price-card {
+      background: #ffffff;
+      border: 2px solid #e5edf7;
+      border-radius: 24px;
+      padding: 32px;
+      text-align: center;
+      position: relative;
+    }
+
+    .price-card.featured {
+      border-color: #1363df;
+      transform: scale(1.03);
+      box-shadow: 0 20px 45px rgba(19, 99, 223, 0.13);
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e8f2ff;
+      color: #1363df;
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .price-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 34px;
+      font-weight: 900;
+      color: #1363df;
+      margin: 15px 0;
+    }
+
+    .price-note {
+      font-size: 15px;
+      color: #00a6a6;
+      font-weight: 800;
+      margin-top: -8px;
+      margin-bottom: 15px;
+    }
+
+    .price-card p {
+      color: #64748b;
+      margin-bottom: 18px;
+    }
+
+    .price-card ul {
+      list-style: none;
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    .price-card li {
+      margin-bottom: 10px;
+      color: #34445c;
+    }
+
+    .price-card li::before {
+      content: "✓";
+      color: #00a6a6;
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .trust-section {
+      background: linear-gradient(135deg, #10213f, #1363df);
+      color: white;
+    }
+
+    .trust-section .section-title h2,
+    .trust-section .section-title p {
+      color: white;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .trust-box {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .trust-box h3 {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    .areas {
+      background: #ffffff;
+    }
+
+    .area-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .area-tags span {
+      background: #eef6ff;
+      color: #1363df;
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-weight: 700;
+    }
+
+    .booking-section {
+      background: #ffffff;
+    }
+
+    .booking-form {
+      max-width: 850px;
+      margin: auto;
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 28px;
+      box-shadow: 0 18px 45px rgba(19, 99, 223, 0.11);
+      border: 1px solid #e5edf7;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      font-weight: 800;
+      color: #10213f;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1.5px solid #dbe7f5;
+      border-radius: 14px;
+      font-size: 15px;
+      outline: none;
+      background: #f8fbff;
+      color: #152238;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #1363df;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(19, 99, 223, 0.08);
+    }
+
+    .form-group textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .form-help {
+      margin: 18px 0 24px;
+      color: #64748b;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .form-submit {
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .cta {
+      text-align: center;
+      background: #eaf4ff;
+      border-radius: 35px;
+      padding: 55px 25px;
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #4d5b70;
+      font-size: 17px;
+    }
+
+    footer {
+      background: #10213f;
+      color: white;
+      padding: 35px 0;
+      text-align: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand .brand-text {
+      color: white;
+    }
+
+    .footer-brand .brand-tagline {
+      color: #cbd5e1;
+    }
+
+    footer p {
+      color: #cbd5e1;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cards,
+      .pricing-grid,
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .navbar {
+        padding: 10px 0;
+      }
+
+      .logo-mark {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-text {
+        font-size: 26px;
+      }
+
+      .brand-tagline {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .hero {
+        padding: 60px 0 45px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-title h2,
+      .cta h2 {
+        font-size: 30px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-form {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <a href="#" class="brand-logo" aria-label="FoldIt Home">
+        <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FoldIt Logo">
+          <defs>
+            <linearGradient id="foldBlue" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1363df" />
+              <stop offset="100%" stop-color="#063c9c" />
+            </linearGradient>
+            <linearGradient id="foldTeal" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#16e0d2" />
+              <stop offset="100%" stop-color="#00a6a6" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="45" fill="#eaf4ff" />
+          <path d="M22 46 C26 25, 42 16, 50 12 C62 18, 74 27, 79 42" fill="none" stroke="url(#foldBlue)" stroke-width="8" stroke-linecap="round" />
+          <path d="M31 33 L50 20 L69 33" fill="none" stroke="url(#foldBlue)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="35" y="54" width="42" height="14" rx="7" fill="url(#foldBlue)" />
+          <rect x="29" y="44" width="42" height="14" rx="7" fill="url(#foldTeal)" />
+          <path d="M25 37 C32 31, 52 31, 66 38 L60 49 C48 45, 38 45, 29 50 Z" fill="#ffffff" stroke="#1363df" stroke-width="3" stroke-linejoin="round" />
+          <path d="M43 36 L50 42 L57 36" fill="none" stroke="#1363df" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="54" cy="43" r="2" fill="#1363df" />
+          <path d="M18 57 H28" stroke="url(#foldTeal)" stroke-width="5" stroke-linecap="round" />
+          <path d="M13 67 H28" stroke="url(#foldBlue)" stroke-width="5" stroke-linecap="round" />
+          <path d="M75 22 L78 29 L85 32 L78 35 L75 42 L72 35 L65 32 L72 29 Z" fill="url(#foldTeal)" />
+        </svg>
+        <div>
+          <div class="brand-text">Fold<span>It</span></div>
+          <span class="brand-tagline">Clean • Folded • Delivered</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#areas">Areas</a>
+        <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20to%20book%20a%20laundry%20pickup." target="_blank">Book Pickup</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Doorstep laundry with <span>no-mix batch care.</span></h1>
+          <p>FoldIt makes daily laundry simple, reliable and professional with verified local partners, sealed pickup, quality checks and on-time delivery.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20to%20book%20a%20laundry%20pickup." target="_blank">Book on WhatsApp</a>
+            <a class="btn btn-secondary" href="#pricing">View Pricing</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="laundry-icon">🧺</div>
+          <h3>Clean. Folded. Delivered.</h3>
+          <p>Perfect for families, working professionals, students, PGs and busy urban homes.</p>
+          <ul>
+            <li>Verified washing & ironing partners</li>
+            <li>Single-batch no-mixing process</li>
+            <li>Pickup and delivery at your doorstep</li>
+            <li>Affordable plans for regular laundry</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>Everything your daily garments need, managed with strict process discipline and professional care.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">👕</div>
+            <h3>Wash & Fold</h3>
+            <p>Daily clothes washed, dried and neatly folded for your regular laundry needs.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🧼</div>
+            <h3>Wash & Iron</h3>
+            <p>Fresh washing plus clean ironing for shirts, trousers, kids wear and regular garments.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🔥</div>
+            <h3>Family Laundry</h3>
+            <p>Simple family bundle pricing for common daily garments at affordable rates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works" id="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>How It Works</h2>
+          <p>A simple, transparent process from pickup to delivery.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Book Pickup</h3>
+            <p>Schedule your order through WhatsApp or our booking form.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Seal & Count</h3>
+            <p>Your garments are counted, sealed and tracked digitally.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Clean & Iron</h3>
+            <p>Verified partners process your order in a single batch.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Deliver Back</h3>
+            <p>Fresh, folded and quality-checked clothes delivered to you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-title">
+          <h2>Simple Pricing</h2>
+          <p>Clear per-piece and family bundle pricing for daily laundry. Final prices may vary for heavy or premium garments.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card">
+            <span class="tag">Basic</span>
+            <h3>Wash & Fold</h3>
+            <div class="price">₹20/piece</div>
+            <p>Best for regular daily-wear laundry.</p>
+            <ul>
+              <li>Doorstep pickup</li>
+              <li>Machine wash</li>
+              <li>Neat folding</li>
+              <li>Single-batch care</li>
+            </ul>
+            <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20Wash%20%26%20Fold%20service." target="_blank">Choose Plan</a>
+          </div>
+
+          <div class="price-card featured">
+            <span class="tag">Most Popular</span>
+            <h3>Wash & Iron</h3>
+            <div class="price">₹25/piece</div>
+            <p>Best for families, office wear and everyday garments.</p>
+            <ul>
+              <li>Wash, dry and iron</li>
+              <li>No-mix batch control</li>
+              <li>Quality check</li>
+              <li>Doorstep delivery</li>
+            </ul>
+            <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20Wash%20%26%20Iron%20service." target="_blank">Choose Plan</a>
+          </div>
+
+          <div class="price-card">
+            <span class="tag">Family Bundle</span>
+            <h3>Family Laundry</h3>
+            <div class="price">₹100</div>
+            <div class="price-note">5-piece family combo</div>
+            <p>Best for regular home laundry needs.</p>
+            <ul>
+              <li>1 Shirt</li>
+              <li>1 Trouser</li>
+              <li>1 Kurti</li>
+              <li>1 Pyajama</li>
+              <li>1 Kid Shirt / T-shirt</li>
+            </ul>
+            <a class="btn" href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20the%20Family%20Laundry%20combo%20worth%20Rs.%20100." target="_blank">Choose Combo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Customers Trust FoldIt</h2>
+          <p>We focus on reliability, hygiene and strict operating standards.</p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-box">
+            <h3>0%</h3>
+            <p>Mixing Promise</p>
+          </div>
+          <div class="trust-box">
+            <h3>24h</h3>
+            <p>Delivery Target</p>
+          </div>
+          <div class="trust-box">
+            <h3>100%</h3>
+            <p>Verified Partners</p>
+          </div>
+          <div class="trust-box">
+            <h3>OTP</h3>
+            <p>Delivery Proof</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="areas" id="areas">
+      <div class="container">
+        <div class="section-title">
+          <h2>Launching In Your Area</h2>
+          <p>Starting with high-density residential societies and student/professional clusters.</p>
+        </div>
+        <div class="area-tags">
+          <span>Noida</span>
+          <span>Greater Noida West</span>
+          <span>Noida Extension</span>
+          <span>Sector 74–78</span>
+          <span>Sector 137</span>
+          <span>Gurugram</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+      <div class="container">
+        <div class="section-title">
+          <h2>Book Your Laundry Pickup</h2>
+          <p>Fill your details once and send the complete order directly to FoldIt on WhatsApp.</p>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="customerName">Name</label>
+              <input type="text" id="customerName" placeholder="Enter your name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number</label>
+              <input type="tel" id="mobileNumber" placeholder="Enter your mobile number" required />
+            </div>
+
+            <div class="form-group">
+              <label for="societyArea">Society / Area</label>
+              <input type="text" id="societyArea" placeholder="Example: Sector 78, Noida" required />
+            </div>
+
+            <div class="form-group">
+              <label for="pickupTime">Preferred Pickup Time</label>
+              <input type="text" id="pickupTime" placeholder="Example: Today 6 PM - 8 PM" required />
+            </div>
+
+            <div class="form-group full">
+              <label for="pickupAddress">Pickup Address</label>
+              <input type="text" id="pickupAddress" placeholder="Enter full pickup address" required />
+            </div>
+
+            <div class="form-group">
+              <label for="serviceNeeded">Service Needed</label>
+              <select id="serviceNeeded" required>
+                <option value="">Select service</option>
+                <option value="Wash & Fold - ₹20/piece">Wash & Fold - ₹20/piece</option>
+                <option value="Wash & Iron - ₹25/piece">Wash & Iron - ₹25/piece</option>
+                <option value="Family Laundry Combo - ₹100">Family Laundry Combo - ₹100</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="approxClothes">Approx Clothes / KG</label>
+              <input type="text" id="approxClothes" placeholder="Example: 10 clothes or 5 kg" required />
+            </div>
+
+            <div class="form-group full">
+              <label for="specialInstruction">Special Instruction</label>
+              <textarea id="specialInstruction" placeholder="Example: Please call before pickup, separate white clothes, etc."></textarea>
+            </div>
+          </div>
+
+          <p class="form-help">After clicking the button, WhatsApp will open with your complete booking details. Please press send on WhatsApp.</p>
+          <button type="submit" class="btn form-submit">Send Booking Details on WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Ready to try FoldIt?</h2>
+          <p>Book your first pickup today and experience professional doorstep laundry with no-mix batch care.</p>
+          <a class="btn" href="#booking">Fill Pickup Form</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-brand">
+        <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FoldIt Logo">
+          <defs>
+            <linearGradient id="footerBlue" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1363df" />
+              <stop offset="100%" stop-color="#063c9c" />
+            </linearGradient>
+            <linearGradient id="footerTeal" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#16e0d2" />
+              <stop offset="100%" stop-color="#00a6a6" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="45" fill="#eaf4ff" />
+          <path d="M22 46 C26 25, 42 16, 50 12 C62 18, 74 27, 79 42" fill="none" stroke="url(#footerBlue)" stroke-width="8" stroke-linecap="round" />
+          <path d="M31 33 L50 20 L69 33" fill="none" stroke="url(#footerBlue)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="35" y="54" width="42" height="14" rx="7" fill="url(#footerBlue)" />
+          <rect x="29" y="44" width="42" height="14" rx="7" fill="url(#footerTeal)" />
+          <path d="M25 37 C32 31, 52 31, 66 38 L60 49 C48 45, 38 45, 29 50 Z" fill="#ffffff" stroke="#1363df" stroke-width="3" stroke-linejoin="round" />
+          <path d="M43 36 L50 42 L57 36" fill="none" stroke="#1363df" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="54" cy="43" r="2" fill="#1363df" />
+          <path d="M18 57 H28" stroke="url(#footerTeal)" stroke-width="5" stroke-linecap="round" />
+          <path d="M13 67 H28" stroke="url(#footerBlue)" stroke-width="5" stroke-linecap="round" />
+          <path d="M75 22 L78 29 L85 32 L78 35 L75 42 L72 35 L65 32 L72 29 Z" fill="url(#footerTeal)" />
+        </svg>
+        <div>
+          <div class="brand-text">Fold<span>It</span></div>
+          <span class="brand-tagline">Clean • Folded • Delivered</span>
+        </div>
+      </div>
+      <p>Doorstep laundry. Verified partners. No-mix batch care.</p>
+      <p>© 2026 FoldIt. All rights reserved.</p>
+    </div>
+  </footer>
+<script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const mobile = document.getElementById("mobileNumber").value.trim();
+      const society = document.getElementById("societyArea").value.trim();
+      const address = document.getElementById("pickupAddress").value.trim();
+      const service = document.getElementById("serviceNeeded").value;
+      const clothes = document.getElementById("approxClothes").value.trim();
+      const pickupTime = document.getElementById("pickupTime").value.trim();
+      const instruction = document.getElementById("specialInstruction").value.trim() || "No special instruction";
+
+      const message = `Hi FoldIt, I want to book a laundry pickup.\n\nName: ${name}\nMobile Number: ${mobile}\nSociety/Area: ${society}\nPickup Address: ${address}\nService Needed: ${service}\nApprox Clothes/KG: ${clothes}\nPreferred Pickup Time: ${pickupTime}\nSpecial Instruction: ${instruction}`;
+
+      const whatsappNumber = "919057135969";
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+</body>
+</html>
