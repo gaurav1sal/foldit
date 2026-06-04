@@ -920,7 +920,34 @@
     height: 58px !important;
     width: 200px !important;
   }
-}</style>
+}
+  /* FINAL FIX: Hide duplicate second FoldIt logo in header */
+.navbar .logo-wrap:nth-of-type(2),
+.navbar > a.logo-wrap:nth-of-type(2) {
+  display: none !important;
+}
+
+/* Keep first FoldIt logo visible */
+.navbar .logo-wrap:nth-of-type(1),
+.navbar > a.logo-wrap:nth-of-type(1) {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Logo size */
+.foldit-logo-svg {
+  height: 72px !important;
+  width: 250px !important;
+  display: block !important;
+}
+
+@media (max-width: 640px) {
+  .foldit-logo-svg {
+    height: 58px !important;
+    width: 200px !important;
+  }
+}
+  </style>
 </head>
 
 <body>
