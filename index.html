@@ -888,7 +888,39 @@
     height: 58px;
     width: 200px;
   }
-} </style>
+} /* FIX: Remove duplicate FoldIt logo/text in header */
+.navbar .logo,
+.navbar .logo-text,
+.navbar .logo-mark,
+.navbar > div.logo,
+.navbar > div.logo-text {
+  display: none !important;
+}
+
+/* Keep only the SVG FoldIt logo visible */
+.logo-wrap {
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+
+.foldit-logo-svg {
+  display: block !important;
+  height: 72px !important;
+  width: 250px !important;
+}
+
+/* If any old logo image is still present, hide it */
+.logo-img {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .foldit-logo-svg {
+    height: 58px !important;
+    width: 200px !important;
+  }
+}</style>
 </head>
 
 <body>
