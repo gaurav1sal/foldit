@@ -3,39 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>FoldIt | Doorstep Laundry & Garment Care</title>
-  <meta name="description" content="FoldIt provides reliable doorstep laundry, wash, iron, fold and delivery with verified partners and no-mix batch control." />
+
+  <meta name="description" content="FoldIt offers doorstep laundry, ironing, folding, stain removal, steam iron and home linen care in Noida and Gurugram. Bengaluru coming soon." />
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    :root {
+      --blue: #083b9a;
+      --blue-light: #2563eb;
+      --cyan: #16c7c7;
+      --green: #18c38f;
+      --dark: #071629;
+      --text: #263445;
+      --muted: #687789;
+      --light: #f5f9ff;
+      --white: #ffffff;
+      --border: #dce7f5;
+      --shadow: 0 18px 45px rgba(7, 22, 41, 0.10);
+      --whatsapp: #25D366;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #f8fbff;
-      color: #152238;
-      line-height: 1.6;
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'Inter', Arial, sans-serif;
+      line-height: 1.65;
     }
 
     a {
       text-decoration: none;
-      color: inherit;
     }
 
     .container {
-      width: 90%;
+      width: 92%;
       max-width: 1180px;
       margin: auto;
     }
 
+    .premium-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--blue-light);
+    }
+
     header {
-      background: #ffffff;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      box-shadow: 0 8px 24px rgba(7, 22, 41, 0.04);
     }
 
     .navbar {
@@ -45,564 +77,701 @@
       padding: 12px 0;
     }
 
-    .brand-logo {
+    .logo-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .logo-mark {
-      width: 58px;
+    .logo-img {
       height: 58px;
-      flex-shrink: 0;
-    }
-
-    .brand-text {
-      font-size: 31px;
-      font-weight: 900;
-      letter-spacing: -1.5px;
-      color: #063c9c;
-      line-height: 1;
-    }
-
-    .brand-text span {
-      color: #00b8b8;
-    }
-
-    .brand-tagline {
+      width: auto;
       display: block;
-      margin-top: 4px;
-      font-size: 10px;
-      letter-spacing: 1.8px;
-      font-weight: 800;
-      color: #64748b;
-      text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 22px;
       align-items: center;
-      font-size: 15px;
-      font-weight: 600;
     }
 
-    .nav-links a:hover {
-      color: #1363df;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      background: #1363df;
-      color: white;
-      border-radius: 30px;
+    .nav-links a {
+      color: var(--text);
       font-weight: 700;
-      transition: 0.3s ease;
-      border: none;
-      cursor: pointer;
+      font-size: 15px;
     }
 
-    .btn:hover {
-      background: #0d4fb3;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: #00a6a6;
-    }
-
-    .btn-secondary:hover {
-      background: #008484;
+    .nav-cta {
+      background: linear-gradient(135deg, var(--blue-light), var(--cyan));
+      color: #ffffff !important;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
     }
 
     .hero {
-      padding: 90px 0 70px;
-      background: linear-gradient(135deg, #eaf4ff 0%, #ffffff 60%, #e9fffb 100%);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(22, 199, 199, 0.18), transparent 30%),
+        radial-gradient(circle at 10% 15%, rgba(37, 99, 235, 0.16), transparent 32%),
+        linear-gradient(135deg, #f5f9ff 0%, #ffffff 52%, #ecfffb 100%);
+      padding: 92px 0 82px;
+      overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.08fr 0.92fr;
       align-items: center;
-      gap: 50px;
+      gap: 44px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eaf2ff;
+      color: var(--blue);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+      margin-bottom: 18px;
+      border: 1px solid #dbeafe;
     }
 
     .hero h1 {
-      font-size: 54px;
-      line-height: 1.1;
+      font-size: 58px;
+      line-height: 1.05;
       margin-bottom: 22px;
-      color: #10213f;
+      letter-spacing: -1.6px;
+      color: var(--dark);
+      font-weight: 900;
     }
 
     .hero h1 span {
-      color: #1363df;
+      background: linear-gradient(135deg, var(--blue-light), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
       font-size: 19px;
-      color: #4d5b70;
-      margin-bottom: 30px;
-      max-width: 610px;
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 28px;
     }
 
-    .hero-actions {
+    .hero-buttons {
       display: flex;
-      gap: 15px;
+      gap: 14px;
       flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      color: #ffffff;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.26);
+      transition: 0.2s ease;
+    }
+
+    .whatsapp-btn {
+      background: var(--whatsapp);
+      color: #ffffff;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.25);
+      transition: 0.2s ease;
+    }
+
+    .primary-btn:hover,
+    .whatsapp-btn:hover,
+    .nav-cta:hover,
+    .mini-book-btn:hover,
+    .mini-wa-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-note {
+      font-size: 14px !important;
+      color: var(--muted) !important;
+      margin-top: 10px;
     }
 
     .hero-card {
-      background: white;
-      padding: 35px;
-      border-radius: 28px;
-      box-shadow: 0 20px 45px rgba(19, 99, 223, 0.12);
+      background: rgba(255, 255, 255, 0.90);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
     }
 
     .hero-card::before {
       content: "";
-      width: 160px;
-      height: 160px;
-      background: #dff7ff;
       position: absolute;
-      top: -60px;
-      right: -60px;
-      border-radius: 50%;
-    }
-
-    .laundry-icon {
-      font-size: 70px;
-      margin-bottom: 18px;
+      top: -70px;
+      right: -70px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(22,199,199,0.25), transparent 70%);
     }
 
     .hero-card h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
-      position: relative;
+      font-size: 26px;
+      margin-bottom: 18px;
+      color: var(--dark);
+      font-weight: 900;
     }
 
     .hero-card ul {
       list-style: none;
-      margin-top: 20px;
       position: relative;
+      z-index: 1;
     }
 
     .hero-card li {
-      margin-bottom: 12px;
-      color: #34445c;
-      font-weight: 600;
+      padding: 13px 0;
+      border-bottom: 1px solid #edf2f7;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .hero-card li:last-child {
+      border-bottom: none;
     }
 
     .hero-card li::before {
       content: "✓";
-      color: #00a6a6;
+      color: var(--green);
       font-weight: 900;
       margin-right: 10px;
     }
 
+    .location-strip {
+      background: var(--dark);
+      color: #ffffff;
+      padding: 18px 0;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .location-strip strong {
+      color: #72e0ff;
+    }
+
     section {
-      padding: 75px 0;
+      padding: 74px 0;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 45px;
+      max-width: 840px;
+      margin: 0 auto 44px;
     }
 
     .section-title h2 {
-      font-size: 38px;
-      color: #10213f;
+      font-size: 42px;
+      color: var(--dark);
       margin-bottom: 12px;
+      letter-spacing: -1px;
+      font-weight: 900;
     }
 
     .section-title p {
-      color: #64748b;
+      color: var(--muted);
       font-size: 17px;
-      max-width: 700px;
-      margin: auto;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 22px;
-      padding: 28px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-      transition: 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
-    }
-
-    .card .icon {
-      font-size: 42px;
-      margin-bottom: 18px;
-    }
-
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-      color: #10213f;
-    }
-
-    .card p {
-      color: #64748b;
-    }
-
-    .how-it-works {
-      background: #ffffff;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
-    .step {
+    .booking-choice-box {
+      background: linear-gradient(135deg, #eef5ff, #edfffb);
+      border: 1px solid #d7e7ff;
+      border-radius: 28px;
+      padding: 32px;
+      margin-bottom: 36px;
       text-align: center;
-      padding: 25px 18px;
+      box-shadow: 0 18px 44px rgba(37, 99, 235, 0.09);
+      color: var(--dark);
     }
 
-    .step-number {
-      width: 58px;
-      height: 58px;
-      background: #1363df;
-      color: white;
+    .booking-choice-box h3 {
+      font-size: 30px;
+      color: var(--dark);
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+
+    .booking-choice-box p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .booking-choice-buttons {
       display: flex;
-      align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      margin: 0 auto 18px;
-      font-size: 22px;
-      font-weight: 800;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
 
-    .pricing-grid {
+    .booking-note {
+      margin-top: 14px;
+      font-size: 14px !important;
+      color: var(--muted) !important;
+    }
+
+    .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
+    .service-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 30px 26px;
+      box-shadow: 0 16px 42px rgba(7, 22, 41, 0.08);
+      position: relative;
+      color: var(--dark);
+      min-height: 315px;
+      transition: 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 55px rgba(7, 22, 41, 0.12);
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #eaf2ff, #e8fffb);
+      color: var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--dark);
+      font-weight: 900;
+    }
+
+    .ready-text {
+      color: var(--blue-light);
+      font-size: 15px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      margin-top: 16px;
+      margin-bottom: 22px;
+    }
+
+    .service-card li {
+      color: var(--text);
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .service-card li::before {
+      content: "✓";
+      color: var(--green);
+      margin-right: 10px;
+      font-weight: 900;
+    }
+
+    .service-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .mini-book-btn {
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      color: #ffffff;
+      padding: 11px 19px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      min-width: 110px;
+      text-align: center;
+      transition: 0.2s ease;
+    }
+
+    .mini-wa-btn {
+      background: var(--whatsapp);
+      color: white;
+      padding: 11px 15px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 900;
+      width: 46px;
+      text-align: center;
+      transition: 0.2s ease;
+    }
+
+    .pricing {
+      background: #f8fafc;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
     .price-card {
       background: #ffffff;
-      border: 2px solid #e5edf7;
-      border-radius: 24px;
-      padding: 32px;
-      text-align: center;
-      position: relative;
+      border-radius: 26px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 42px rgba(7, 22, 41, 0.07);
+      transition: 0.2s ease;
     }
 
-    .price-card.featured {
-      border-color: #1363df;
-      transform: scale(1.03);
-      box-shadow: 0 20px 45px rgba(19, 99, 223, 0.13);
-    }
-
-    .tag {
-      display: inline-block;
-      background: #e8f2ff;
-      color: #1363df;
-      padding: 7px 14px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 18px;
+    .price-card:hover {
+      transform: translateY(-4px);
     }
 
     .price-card h3 {
       font-size: 24px;
+      color: var(--dark);
       margin-bottom: 10px;
+      font-weight: 900;
     }
 
     .price {
-      font-size: 34px;
+      font-size: 32px;
       font-weight: 900;
-      color: #1363df;
-      margin: 15px 0;
+      color: var(--blue-light);
+      margin-bottom: 8px;
     }
 
-    .price-note {
+    .price span {
       font-size: 15px;
-      color: #00a6a6;
-      font-weight: 800;
-      margin-top: -8px;
-      margin-bottom: 15px;
+      color: var(--muted);
+      font-weight: 700;
     }
 
     .price-card p {
-      color: #64748b;
+      color: var(--muted);
+      font-size: 15px;
       margin-bottom: 18px;
     }
 
-    .price-card ul {
-      list-style: none;
-      text-align: left;
-      margin: 20px 0;
-    }
-
-    .price-card li {
-      margin-bottom: 10px;
-      color: #34445c;
-    }
-
-    .price-card li::before {
-      content: "✓";
-      color: #00a6a6;
-      font-weight: 900;
-      margin-right: 8px;
+    .price-note {
+      text-align: center;
+      max-width: 900px;
+      margin: 30px auto 0;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .trust-section {
-      background: linear-gradient(135deg, #10213f, #1363df);
-      color: white;
-    }
-
-    .trust-section .section-title h2,
-    .trust-section .section-title p {
-      color: white;
+      background: #ffffff;
     }
 
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
 
-    .trust-box {
-      background: rgba(255, 255, 255, 0.12);
-      padding: 25px;
-      border-radius: 20px;
-      text-align: center;
-      backdrop-filter: blur(12px);
-    }
-
-    .trust-box h3 {
-      font-size: 30px;
-      margin-bottom: 6px;
-    }
-
-    .areas {
+    .trust-card {
       background: #ffffff;
+      border-radius: 22px;
+      padding: 26px 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 28px rgba(7, 22, 41, 0.06);
     }
 
-    .area-tags {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .area-tags span {
-      background: #eef6ff;
-      color: #1363df;
-      padding: 12px 18px;
-      border-radius: 30px;
-      font-weight: 700;
-    }
-
-    .contact-bar {
-      background: linear-gradient(135deg, #063c9c, #00a6a6);
-      color: white;
-      padding: 14px 0;
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-    }
-
-    .contact-bar a {
-      color: white;
-      background: rgba(255, 255, 255, 0.18);
-      padding: 8px 16px;
-      border-radius: 999px;
-      margin-left: 8px;
-      display: inline-block;
-    }
-
-    .contact-section {
-      background: #ffffff;
-    }
-
-    .contact-card {
-      max-width: 900px;
-      margin: auto;
-      background: linear-gradient(135deg, #eaf4ff, #ffffff 55%, #e9fffb);
-      border: 1px solid #dbe7f5;
-      border-radius: 30px;
-      padding: 38px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 25px;
-      box-shadow: 0 18px 45px rgba(19, 99, 223, 0.11);
-    }
-
-    .contact-card h2 {
-      font-size: 34px;
-      color: #10213f;
-      margin-bottom: 10px;
-    }
-
-    .contact-card p {
-      color: #4d5b70;
-      font-size: 17px;
-    }
-
-    .call-box {
-      min-width: 250px;
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
-      border: 1px solid #e5edf7;
-    }
-
-    .call-icon {
-      width: 66px;
-      height: 66px;
-      margin: 0 auto 12px;
-      border-radius: 50%;
-      background: #00a6a6;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      box-shadow: 0 10px 25px rgba(0, 166, 166, 0.28);
-    }
-
-    .call-number {
-      display: block;
-      font-size: 22px;
+    .trust-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: var(--dark);
       font-weight: 900;
-      color: #063c9c;
-      margin: 8px 0 16px;
     }
 
-    .floating-call {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 999;
-      width: 62px;
-      height: 62px;
+    .trust-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .how {
+      background: var(--dark);
+      color: #ffffff;
+    }
+
+    .how .section-title h2 {
+      color: #ffffff;
+    }
+
+    .how .section-title p {
+      color: #cbd5e1;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      background: var(--green);
+      color: #ffffff;
       border-radius: 50%;
-      background: #00a6a6;
-      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
-      box-shadow: 0 12px 30px rgba(0, 166, 166, 0.35);
-      border: 4px solid white;
+      font-weight: 900;
+      margin-bottom: 14px;
     }
 
-    .floating-call:hover {
-      background: #008484;
-      transform: translateY(-3px);
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 900;
     }
 
-    .booking-section {
-      background: #ffffff;
-    }
-
-    .google-form-box {
-      max-width: 950px;
-      margin: auto;
-      background: #ffffff;
-      padding: 22px;
-      border-radius: 28px;
-      box-shadow: 0 18px 45px rgba(19, 99, 223, 0.11);
-      border: 1px solid #e5edf7;
-      overflow: hidden;
-    }
-
-    .google-form-box iframe {
-      width: 100%;
-      min-height: 980px;
-      border: none;
-      border-radius: 18px;
-      background: #ffffff;
-    }
-
-    .form-help {
-      margin: 0 auto 24px;
-      color: #64748b;
+    .step p {
+      color: #cbd5e1;
       font-size: 15px;
-      text-align: center;
-      max-width: 760px;
-    }
-
-    .open-form-link {
-      text-align: center;
-      margin-top: 18px;
     }
 
     .cta {
+      background: linear-gradient(135deg, var(--blue-light), var(--dark));
+      color: #ffffff;
       text-align: center;
-      background: #eaf4ff;
-      border-radius: 35px;
-      padding: 55px 25px;
     }
 
     .cta h2 {
-      font-size: 38px;
-      margin-bottom: 15px;
+      font-size: 42px;
+      margin-bottom: 12px;
+      color: #ffffff;
+      font-weight: 900;
     }
 
     .cta p {
-      max-width: 650px;
+      font-size: 18px;
+      color: #dbeafe;
+      max-width: 720px;
       margin: 0 auto 28px;
-      color: #4d5b70;
-      font-size: 17px;
     }
 
     footer {
-      background: #10213f;
-      color: white;
-      padding: 35px 0;
+      background: #020617;
+      color: #94a3b8;
+      padding: 34px 0;
       text-align: center;
     }
 
-    .footer-brand {
+    footer strong {
+      color: #ffffff;
+    }
+
+    .floating-stack {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 9999;
+    }
+
+    .float-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 12px;
+      font-size: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: 0.2s ease;
     }
 
-    .footer-brand .brand-text {
+    .float-icon:hover {
+      transform: translateY(-2px);
+    }
+
+    .float-wa {
+      background: var(--whatsapp);
       color: white;
     }
 
-    .footer-brand .brand-tagline {
-      color: #cbd5e1;
+    .float-form {
+      background: var(--blue-light);
+      color: white;
     }
 
-    footer p {
-      color: #cbd5e1;
-      margin-top: 8px;
+    .offer-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      padding: 18px;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid,
-      .cards,
-      .pricing-grid,
-      .trust-grid {
+    .offer-modal.hidden {
+      display: none;
+    }
+
+    .offer-box {
+      width: 100%;
+      max-width: 820px;
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 30px;
+      padding: 38px;
+      color: var(--dark);
+      position: relative;
+      box-shadow: 0 24px 80px rgba(7, 22, 41, 0.28);
+    }
+
+    .close-modal {
+      position: absolute;
+      right: 20px;
+      top: 18px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: var(--dark);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .offer-top {
+      text-align: center;
+      background: #dbeafe;
+      color: var(--blue);
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      border-radius: 999px;
+      padding: 8px 16px;
+      display: block;
+      width: fit-content;
+      margin: 0 auto 22px;
+      font-size: 14px;
+    }
+
+    .offer-box h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 4px;
+      color: var(--dark);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    .offer-box h1 {
+      text-align: center;
+      font-size: 58px;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--blue-light), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .offer-box p {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 26px;
+      font-weight: 700;
+    }
+
+    .offer-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .offer-form input,
+    .offer-form select {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--dark);
+      padding: 18px 20px;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 700;
+      outline: none;
+    }
+
+    .offer-form input::placeholder {
+      color: #9ca3af;
+    }
+
+    .offer-form button {
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      color: #ffffff;
+      padding: 18px 20px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid {
         grid-template-columns: 1fr;
       }
 
+      .service-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-grid,
       .steps {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -610,413 +779,581 @@
       .hero h1 {
         font-size: 42px;
       }
+    }
 
+    @media (max-width: 640px) {
       .nav-links {
         display: none;
       }
 
-      .price-card.featured {
-        transform: none;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .navbar {
-        padding: 10px 0;
-      }
-
-      .logo-mark {
-        width: 48px;
-        height: 48px;
-      }
-
-      .brand-text {
-        font-size: 26px;
-      }
-
-      .brand-tagline {
-        font-size: 8px;
-        letter-spacing: 1px;
+      .logo-img {
+        height: 52px;
       }
 
       .hero {
-        padding: 60px 0 45px;
+        padding: 64px 0 58px;
       }
 
       .hero h1 {
-        font-size: 34px;
+        font-size: 36px;
       }
 
       .hero p {
-        font-size: 16px;
+        font-size: 17px;
       }
 
-      .section-title h2,
-      .cta h2 {
-        font-size: 30px;
+      .hero-buttons,
+      .booking-choice-buttons {
+        flex-direction: column;
       }
 
+      .primary-btn,
+      .whatsapp-btn {
+        text-align: center;
+        width: 100%;
+      }
+
+      .service-grid,
+      .pricing-grid,
+      .trust-grid,
       .steps {
         grid-template-columns: 1fr;
       }
 
-      .hero-actions {
-        flex-direction: column;
+      .section-title h2 {
+        font-size: 30px;
       }
 
-      .btn {
-        width: 100%;
-        text-align: center;
+      .service-actions {
+        flex-direction: row;
       }
 
-      .contact-bar a {
-        margin-top: 8px;
-        margin-left: 0;
+      .offer-box {
+        padding: 28px 22px;
       }
 
-      .contact-card {
-        grid-template-columns: 1fr;
-        padding: 26px;
-        text-align: center;
+      .offer-box h1 {
+        font-size: 40px;
       }
 
-      .call-box {
-        min-width: auto;
-        width: 100%;
+      .offer-box h2 {
+        font-size: 24px;
       }
 
-      .floating-call {
-        width: 56px;
-        height: 56px;
-        right: 16px;
-        bottom: 16px;
+      .floating-stack {
+        right: 14px;
+        bottom: 14px;
       }
 
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .booking-form {
-        padding: 24px;
+      .float-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="contact-bar">
-    Need laundry pickup? Call us now <a href="tel:919057135969">☎ 919057135969</a>
+
+  <div class="offer-modal" id="offerModal">
+    <div class="offer-box">
+      <button class="close-modal" onclick="closeOffer()">×</button>
+
+      <span class="offer-top">🎁 EARLY MEMBER OFFER</span>
+
+      <h2>Avail</h2>
+      <h1>UP TO 60% OFF</h1>
+      <p>On your first 3 orders. Exclusive launch discount for early FoldIt members.</p>
+
+      <form class="offer-form" onsubmit="claimOffer(event)">
+        <input type="text" id="offerName" placeholder="Your Name" required />
+        <input type="tel" id="offerPhone" placeholder="Phone Number" required />
+
+        <select id="offerCity" required onchange="updateSectors()">
+          <option value="">Select Your City</option>
+          <option value="Noida">Noida</option>
+          <option value="Gurugram">Gurugram</option>
+          <option value="Bengaluru Coming Soon">Bengaluru - Coming Soon</option>
+        </select>
+
+        <select id="offerSector" required>
+          <option value="">Select Sector / Area</option>
+        </select>
+
+        <button type="submit">Claim My Spot</button>
+      </form>
+    </div>
   </div>
 
   <header>
     <div class="container navbar">
-      <a href="#" class="brand-logo" aria-label="FoldIt Home">
-        <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FoldIt Logo">
-          <defs>
-            <linearGradient id="foldBlue" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#1363df" />
-              <stop offset="100%" stop-color="#063c9c" />
-            </linearGradient>
-            <linearGradient id="foldTeal" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#16e0d2" />
-              <stop offset="100%" stop-color="#00a6a6" />
-            </linearGradient>
-          </defs>
-          <circle cx="50" cy="50" r="45" fill="#eaf4ff" />
-          <path d="M22 46 C26 25, 42 16, 50 12 C62 18, 74 27, 79 42" fill="none" stroke="url(#foldBlue)" stroke-width="8" stroke-linecap="round" />
-          <path d="M31 33 L50 20 L69 33" fill="none" stroke="url(#foldBlue)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
-          <rect x="35" y="54" width="42" height="14" rx="7" fill="url(#foldBlue)" />
-          <rect x="29" y="44" width="42" height="14" rx="7" fill="url(#foldTeal)" />
-          <path d="M25 37 C32 31, 52 31, 66 38 L60 49 C48 45, 38 45, 29 50 Z" fill="#ffffff" stroke="#1363df" stroke-width="3" stroke-linejoin="round" />
-          <path d="M43 36 L50 42 L57 36" fill="none" stroke="#1363df" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-          <circle cx="54" cy="43" r="2" fill="#1363df" />
-          <path d="M18 57 H28" stroke="url(#foldTeal)" stroke-width="5" stroke-linecap="round" />
-          <path d="M13 67 H28" stroke="url(#foldBlue)" stroke-width="5" stroke-linecap="round" />
-          <path d="M75 22 L78 29 L85 32 L78 35 L75 42 L72 35 L65 32 L72 29 Z" fill="url(#foldTeal)" />
-        </svg>
-        <div>
-          <div class="brand-text">Fold<span>It</span></div>
-          <span class="brand-tagline">Clean • Folded • Delivered</span>
-        </div>
+      <a href="#" class="logo-wrap">
+        <img src="foldit-logo.png" alt="FoldIt Logo" class="logo-img" />
       </a>
+
       <nav class="nav-links">
         <a href="#services">Services</a>
-        <a href="#process">How It Works</a>
         <a href="#pricing">Pricing</a>
-        <a href="#areas">Areas</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="#booking">Book Pickup</a>
+        <a href="#how">How It Works</a>
+        <a
+          class="nav-cta"
+          href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform"
+          target="_blank">
+          Book
+        </a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <h1>Doorstep laundry with <span>no-mix batch care.</span></h1>
-          <p>FoldIt makes daily laundry simple, reliable and professional with verified local partners, sealed pickup, quality checks and on-time delivery.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#booking">Book Pickup</a>
-            <a class="btn btn-secondary" href="#pricing">View Pricing</a>
-          </div>
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="badge">Noida & Gurugram • Bengaluru Coming Soon</div>
+
+        <h1>Doorstep <span>Laundry, Ironing & Folding</span> made simple.</h1>
+
+        <p>
+          FoldIt helps customers book laundry pickup, washing, ironing, folding,
+          steam iron, stain support and home linen care through <span class="premium-text">verified local partners</span>.
+        </p>
+
+        <div class="hero-buttons">
+          <a
+            href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform"
+            target="_blank"
+            class="primary-btn">
+            Book
+          </a>
+
+          <a
+            href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20to%20book%20a%20laundry%20pickup.%0A%0AName%3A%0ALocation%3A%0AService%20Needed%3A%0APickup%20Date%20%26%20Time%3A"
+            target="_blank"
+            class="whatsapp-btn">
+            WhatsApp
+          </a>
         </div>
 
-        <div class="hero-card">
-          <div class="laundry-icon">🧺</div>
-          <h3>Clean. Folded. Delivered.</h3>
-          <p>Perfect for families, working professionals, students, PGs and busy urban homes.</p>
+        <p class="hero-note">
+          Best flow: Book through form first, then WhatsApp us for faster pickup confirmation.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <h3>Why Customers Choose FoldIt</h3>
+        <ul>
+          <li>Doorstep Pickup and Delivery</li>
+          <li>Wash, Iron, Fold and Packing</li>
+          <li>Garment Count Confirmation</li>
+          <li>Quality Check Before Delivery</li>
+          <li>Stain Support on Special Request</li>
+          <li>Google Form + WhatsApp Booking</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="location-strip">
+    <div class="container">
+      <strong>Live Pilot:</strong> Noida & Gurugram |
+      <strong>Coming Soon:</strong> Bengaluru
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>
+          Everyday laundry, wash & iron, home linen, stain support and steam iron — all with easy booking and doorstep convenience.
+        </p>
+      </div>
+
+      <div class="booking-choice-box">
+        <h3>Choose Your Booking Method</h3>
+        <p>Click <span class="premium-text">Book</span> to open the pickup form. Use WhatsApp for quick confirmation.</p>
+
+        <div class="booking-choice-buttons">
+          <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="primary-btn">
+            Book
+          </a>
+
+          <a 
+            href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20to%20book%20a%20laundry%20pickup.%0A%0AI%20will%20share%20my%20details%20now.%0A%0AName%3A%0ALocation%3A%0AService%20Needed%3A%0APickup%20Date%20%26%20Time%3A"
+            target="_blank"
+            class="whatsapp-btn">
+            WhatsApp
+          </a>
+        </div>
+
+        <p class="booking-note">
+          Recommended: Fill the form first, then WhatsApp us for faster confirmation.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon">🧺</div>
+          <h3>Wash & Fold</h3>
+          <div class="ready-text">• Doorstep Pickup</div>
           <ul>
-            <li>Verified washing & ironing partners</li>
-            <li>Single-batch no-mixing process</li>
-            <li>Pickup and delivery at your doorstep</li>
-            <li>Affordable plans for regular laundry</li>
+            <li>Daily Clothes</li>
+            <li>Neatly Folded</li>
+            <li>Garment Count Confirmation</li>
+            <li>Quality Check Before Delivery</li>
           </ul>
+          <div class="service-actions">
+            <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
+            <a href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20Wash%20%26%20Fold.%0AName%3A%0ALocation%3A" target="_blank" class="mini-wa-btn">☎</a>
+          </div>
         </div>
+
+        <div class="service-card">
+          <div class="service-icon">👔</div>
+          <h3>Wash & Iron</h3>
+          <div class="ready-text">• Best for Office Wear</div>
+          <ul>
+            <li>Shirts, Trousers, Jeans</li>
+            <li>Kurtas and Uniforms</li>
+            <li>Wash + Press Finish</li>
+            <li>Doorstep Delivery</li>
+          </ul>
+          <div class="service-actions">
+            <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
+            <a href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20Wash%20%26%20Iron.%0AName%3A%0ALocation%3A" target="_blank" class="mini-wa-btn">☎</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🛏️</div>
+          <h3>Home Linen</h3>
+          <div class="ready-text">• Bedsheets, Towels & Pillow Covers</div>
+          <ul>
+            <li>Towels</li>
+            <li>Pillow Covers</li>
+            <li>Single Bedsheets</li>
+            <li>Queen & King Size Bedsheets</li>
+          </ul>
+          <div class="service-actions">
+            <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
+            <a href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20Home%20Linen%20service.%0AName%3A%0ALocation%3A" target="_blank" class="mini-wa-btn">☎</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Stain Removal</h3>
+          <div class="ready-text">• On Special Request</div>
+          <ul>
+            <li>Stain-Type Check</li>
+            <li>Pre-Treatment Support</li>
+            <li>Fabric-Safe Handling</li>
+            <li>₹40–₹60/Item Depending on Stain Quality</li>
+          </ul>
+          <div class="service-actions">
+            <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
+            <a href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20Stain%20Removal%20support.%0AName%3A%0ALocation%3A%0AStain%20Type%3A" target="_blank" class="mini-wa-btn">☎</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">♨️</div>
+          <h3>Steam Iron</h3>
+          <div class="ready-text">• On Special Request</div>
+          <ul>
+            <li>Steam-Safe Pressing</li>
+            <li>Shape-Preserving Press</li>
+            <li>Suitable for Selected Garments</li>
+            <li>₹15/Item</li>
+          </ul>
+          <div class="service-actions">
+            <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
+            <a href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20Steam%20Iron%20service.%0AName%3A%0ALocation%3A" target="_blank" class="mini-wa-btn">☎</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>FoldIt Care</h3>
+          <div class="ready-text">• Quality-Focused Garment Care</div>
+          <ul>
+            <li>Garment Count</li>
+            <li>Basic Inspection</li>
+            <li>Neat Folding and Packing</li>
+            <li>WhatsApp Confirmation</li>
+          </ul>
+          <div class="service-actions">
+            <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
+            <a href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20to%20know%20more%20about%20FoldIt%20Care.%0AName%3A%0ALocation%3A" target="_blank" class="mini-wa-btn">☎</a>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Our Services</h2>
-          <p>Everything your daily garments need, managed with strict process discipline and professional care.</p>
-        </div>
-
-        <div class="cards">
-          <div class="card">
-            <div class="icon">👕</div>
-            <h3>Wash & Fold</h3>
-            <p>Daily clothes washed, dried and neatly folded for your regular laundry needs.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🧼</div>
-            <h3>Wash & Iron</h3>
-            <p>Fresh washing plus clean ironing for shirts, trousers, kids wear and regular garments.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🔥</div>
-            <h3>Family Laundry</h3>
-            <p>Simple family bundle pricing for common daily garments at affordable rates.</p>
-          </div>
-        </div>
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-title">
+        <h2>Introductory Pilot Pricing</h2>
+        <p>Simple pricing for Noida & Gurugram pilot customers. Final estimate is confirmed before pickup.</p>
       </div>
-    </section>
 
-    <section class="how-it-works" id="process">
-      <div class="container">
-        <div class="section-title">
-          <h2>How It Works</h2>
-          <p>A simple, transparent process from pickup to delivery.</p>
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <h3>Wash & Fold</h3>
+          <div class="price">₹20 <span>/ Cloth Onwards</span></div>
+          <p>Daily Garments washed, dried and folded.</p>
+          <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
         </div>
 
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Book Pickup</h3>
-            <p>Schedule your order through WhatsApp or our booking form.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Seal & Count</h3>
-            <p>Your garments are counted, sealed and tracked digitally.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Clean & Iron</h3>
-            <p>Verified partners process your order in a single batch.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <h3>Deliver Back</h3>
-            <p>Fresh, folded and quality-checked clothes delivered to you.</p>
-          </div>
+        <div class="price-card">
+          <h3>Wash & Iron</h3>
+          <div class="price">₹30 <span>/ Cloth</span></div>
+          <p>Washing with ironing support for regular Garments.</p>
+          <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
         </div>
+
+        <div class="price-card">
+          <h3>Home Linen</h3>
+          <div class="price">₹20 <span>/ Towel or Pillow Cover</span></div>
+          <p>Single Bedsheet ₹50, Queen Size Bedsheet ₹60, King Size Bedsheet ₹70 per piece.</p>
+          <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Stain Removal</h3>
+          <div class="price">₹40–₹60 <span>/ Item</span></div>
+          <p>On Special Request. Final charge depends on stain type, fabric and stain quality.</p>
+          <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Steam Iron</h3>
+          <div class="price">₹15 <span>/ Item</span></div>
+          <p>On Special Request for selected Garments.</p>
+          <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="mini-book-btn">Book</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Pickup Confirmation</h3>
+          <div class="price">WhatsApp <span>Support</span></div>
+          <p>Book through form and confirm pickup on WhatsApp for faster service.</p>
+          <a href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20have%20filled%20the%20form.%20Please%20confirm%20my%20pickup." target="_blank" class="mini-book-btn">Confirm</a>
+        </div>
+
       </div>
-    </section>
 
-    <section id="pricing">
-      <div class="container">
-        <div class="section-title">
-          <h2>Simple Pricing</h2>
-          <p>Clear per-piece and family bundle pricing for daily laundry. Final prices may vary for heavy or premium garments.</p>
-        </div>
+      <p class="price-note">
+        Prices are introductory pilot rates and may vary based on Garment type, fabric, location, stains and partner availability. Final price will be confirmed before pickup.
+      </p>
+    </div>
+  </section>
 
-        <div class="pricing-grid">
-          <div class="price-card">
-            <span class="tag">Basic</span>
-            <h3>Wash & Fold</h3>
-            <div class="price">₹20/piece</div>
-            <p>Best for regular daily-wear laundry.</p>
-            <ul>
-              <li>Doorstep pickup</li>
-              <li>Machine wash</li>
-              <li>Neat folding</li>
-              <li>Single-batch care</li>
-            </ul>
-            <a class="btn" href="#booking">Choose Plan</a>
-          </div>
-
-          <div class="price-card featured">
-            <span class="tag">Most Popular</span>
-            <h3>Wash & Iron</h3>
-            <div class="price">₹25/piece</div>
-            <p>Best for families, office wear and everyday garments.</p>
-            <ul>
-              <li>Wash, dry and iron</li>
-              <li>No-mix batch control</li>
-              <li>Quality check</li>
-              <li>Doorstep delivery</li>
-            </ul>
-            <a class="btn" href="#booking">Choose Plan</a>
-          </div>
-
-          <div class="price-card">
-            <span class="tag">Family Bundle</span>
-            <h3>Family Laundry</h3>
-            <div class="price">₹100</div>
-            <div class="price-note">5-piece family combo</div>
-            <p>Best for regular home laundry needs.</p>
-            <ul>
-              <li>1 Shirt</li>
-              <li>1 Trouser</li>
-              <li>1 Kurti</li>
-              <li>1 Pyajama</li>
-              <li>1 Kid Shirt / T-shirt</li>
-            </ul>
-            <a class="btn" href="#booking">Choose Combo</a>
-          </div>
-        </div>
+  <section class="trust-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Built for Trust, Quality & Convenience</h2>
+        <p>FoldIt is building a verified Garment-care network, not just a laundry pickup service.</p>
       </div>
-    </section>
 
-    <section class="trust-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Why Customers Trust FoldIt</h2>
-          <p>We focus on reliability, hygiene and strict operating standards.</p>
+      <div class="trust-grid">
+
+        <div class="trust-card">
+          <h3>Verified Partners</h3>
+          <p>We work with verified launderers, ironing partners and micro-hub support.</p>
         </div>
 
-        <div class="trust-grid">
-          <div class="trust-box">
-            <h3>0%</h3>
-            <p>Mixing Promise</p>
-          </div>
-          <div class="trust-box">
-            <h3>24h</h3>
-            <p>Delivery Target</p>
-          </div>
-          <div class="trust-box">
-            <h3>100%</h3>
-            <p>Verified Partners</p>
-          </div>
-          <div class="trust-box">
-            <h3>OTP</h3>
-            <p>Delivery Proof</p>
-          </div>
+        <div class="trust-card">
+          <h3>Garment Count</h3>
+          <p>Clothes are counted and confirmed before processing.</p>
         </div>
+
+        <div class="trust-card">
+          <h3>Quality Check</h3>
+          <p>Orders go through basic quality checks before packing and delivery.</p>
+        </div>
+
+        <div class="trust-card">
+          <h3>Easy Booking</h3>
+          <p>Book through Google Form and confirm through WhatsApp.</p>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="areas" id="areas">
-      <div class="container">
-        <div class="section-title">
-          <h2>Launching In Your Area</h2>
-          <p>Starting with high-density residential societies and student/professional clusters.</p>
-        </div>
-        <div class="area-tags">
-          <span>Noida</span>
-          <span>Greater Noida West</span>
-          <span>Noida Extension</span>
-          <span>Sector 74–78</span>
-          <span>Sector 137</span>
-          <span>Gurugram</span>
-        </div>
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-title">
+        <h2>How FoldIt Works</h2>
+        <p>Simple booking, confirmation, pickup and doorstep delivery.</p>
       </div>
-    </section>
 
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="contact-card">
-          <div>
-            <h2>Contact FoldIt</h2>
-            <p>Need doorstep laundry pickup, pricing help, or service details? Call us directly and our team will help you book your laundry pickup.</p>
-          </div>
-          <div class="call-box">
-            <div class="call-icon">☎</div>
-            <strong>Call / WhatsApp</strong>
-            <a class="call-number" href="tel:919057135969">919057135969</a>
-            <a class="btn" href="tel:919057135969">Call Now</a>
-          </div>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Book</h3>
+          <p>Click Book and fill pickup details in the form.</p>
         </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Confirm</h3>
+          <p>WhatsApp us for faster pickup confirmation.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Process</h3>
+          <p>Your Clothes are washed, ironed, folded or handled as requested.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Deliver</h3>
+          <p>Clean Garments are delivered back to your doorstep.</p>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="booking-section" id="booking">
-      <div class="container">
-        <div class="section-title">
-          <h2>Book Your Laundry Pickup</h2>
-          <p>Fill the booking form below. Your details will be received by FoldIt directly through Google Forms.</p>
-        </div>
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Try FoldIt?</h2>
+      <p>Fill the booking form first, then WhatsApp us for faster confirmation.</p>
 
-        <p class="form-help">After submitting the form, our team will call or WhatsApp you shortly for pickup confirmation.</p>
+      <div class="hero-buttons" style="justify-content:center;">
+        <a href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform" target="_blank" class="primary-btn">
+          Book
+        </a>
 
-        <div class="google-form-box">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-RT3L_e_5Wb_-7C50IVTV-OSRRjA5MQwEoqb4uwuxNWD0SA/viewform?embedded=true" loading="lazy">Loading…</iframe>
-        </div>
-
-        <div class="open-form-link">
-          <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSd-RT3L_e_5Wb_-7C50IVTV-OSRRjA5MQwEoqb4uwuxNWD0SA/viewform?usp=dialog" target="_blank">Open Booking Form</a>
-        </div>
+        <a
+          href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20have%20filled%20the%20form.%20Please%20confirm%20my%20pickup."
+          target="_blank"
+          class="whatsapp-btn">
+          Confirm on WhatsApp
+        </a>
       </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="cta">
-          <h2>Ready to try FoldIt?</h2>
-          <p>Book your first pickup today and experience professional doorstep laundry with no-mix batch care.</p>
-          <a class="btn" href="#booking">Fill Pickup Form</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <a class="floating-call" href="tel:919057135969" aria-label="Call FoldIt">☎</a>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
-      <div class="footer-brand">
-        <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FoldIt Logo">
-          <defs>
-            <linearGradient id="footerBlue" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#1363df" />
-              <stop offset="100%" stop-color="#063c9c" />
-            </linearGradient>
-            <linearGradient id="footerTeal" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#16e0d2" />
-              <stop offset="100%" stop-color="#00a6a6" />
-            </linearGradient>
-          </defs>
-          <circle cx="50" cy="50" r="45" fill="#eaf4ff" />
-          <path d="M22 46 C26 25, 42 16, 50 12 C62 18, 74 27, 79 42" fill="none" stroke="url(#footerBlue)" stroke-width="8" stroke-linecap="round" />
-          <path d="M31 33 L50 20 L69 33" fill="none" stroke="url(#footerBlue)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
-          <rect x="35" y="54" width="42" height="14" rx="7" fill="url(#footerBlue)" />
-          <rect x="29" y="44" width="42" height="14" rx="7" fill="url(#footerTeal)" />
-          <path d="M25 37 C32 31, 52 31, 66 38 L60 49 C48 45, 38 45, 29 50 Z" fill="#ffffff" stroke="#1363df" stroke-width="3" stroke-linejoin="round" />
-          <path d="M43 36 L50 42 L57 36" fill="none" stroke="#1363df" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-          <circle cx="54" cy="43" r="2" fill="#1363df" />
-          <path d="M18 57 H28" stroke="url(#footerTeal)" stroke-width="5" stroke-linecap="round" />
-          <path d="M13 67 H28" stroke="url(#footerBlue)" stroke-width="5" stroke-linecap="round" />
-          <path d="M75 22 L78 29 L85 32 L78 35 L75 42 L72 35 L65 32 L72 29 Z" fill="url(#footerTeal)" />
-        </svg>
-        <div>
-          <div class="brand-text">Fold<span>It</span></div>
-          <span class="brand-tagline">Clean • Folded • Delivered</span>
-        </div>
-      </div>
-      <p>Doorstep laundry. Verified partners. No-mix batch care.</p>
-      <p>© 2026 FoldIt. All rights reserved.</p>
+      <p><strong>FoldIt</strong> — Tech-enabled doorstep Garment care.</p>
+      <p>Live pilot: Noida & Gurugram. Bengaluru coming soon.</p>
+      <p>Demo MVP website. Paid pilot version will be launched with proper domain and improved booking system.</p>
+      <p>WhatsApp: +91 9057135969</p>
     </div>
   </footer>
+
+  <div class="floating-stack">
+    <a
+      href="https://docs.google.com/forms/d/1qrR_tel3Ww3U7ca-dBG6fPKK97bZLKrgoKVrmAAdZBE/viewform"
+      class="float-icon float-form"
+      target="_blank"
+      title="Book Form">
+      📝
+    </a>
+
+    <a
+      href="https://wa.me/919057135969?text=Hi%20FoldIt%2C%20I%20want%20to%20book%20a%20laundry%20pickup.%0A%0AName%3A%0ALocation%3A%0AService%20Needed%3A%0APickup%20Time%3A"
+      class="float-icon float-wa"
+      target="_blank"
+      title="WhatsApp">
+      ☎
+    </a>
+  </div>
+
+  <script>
+    const whatsappNumber = "919057135969";
+
+    const sectors = {
+      "Noida": [
+        "Sector 18",
+        "Sector 62",
+        "Sector 63",
+        "Sector 75",
+        "Sector 76",
+        "Sector 78",
+        "Sector 137",
+        "Sector 150",
+        "Other Noida Area"
+      ],
+      "Gurugram": [
+        "DLF Phase 1",
+        "DLF Phase 2",
+        "DLF Phase 3",
+        "DLF Phase 4",
+        "DLF Phase 5",
+        "Golf Course Road",
+        "Sohna Road",
+        "Sector 56",
+        "Sector 57",
+        "Sector 49",
+        "Sector 50",
+        "Other Gurugram Area"
+      ],
+      "Bengaluru Coming Soon": [
+        "Coming Soon - Join Waitlist"
+      ]
+    };
+
+    function updateSectors() {
+      const city = document.getElementById("offerCity").value;
+      const sectorSelect = document.getElementById("offerSector");
+
+      sectorSelect.innerHTML = '<option value="">Select Sector / Area</option>';
+
+      if (city && sectors[city]) {
+        sectors[city].forEach(function(area) {
+          const option = document.createElement("option");
+          option.value = area;
+          option.textContent = area;
+          sectorSelect.appendChild(option);
+        });
+      }
+    }
+
+    function closeOffer() {
+      document.getElementById("offerModal").classList.add("hidden");
+      localStorage.setItem("folditOfferClosed", "yes");
+    }
+
+    function claimOffer(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("offerName").value;
+      const phone = document.getElementById("offerPhone").value;
+      const city = document.getElementById("offerCity").value;
+      const sector = document.getElementById("offerSector").value;
+
+      const message =
+        "Hi FoldIt, I want to claim the Early Member Offer.%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "City: " + encodeURIComponent(city) + "%0A" +
+        "Sector/Area: " + encodeURIComponent(sector);
+
+      window.open("https://wa.me/" + whatsappNumber + "?text=" + message, "_blank");
+
+      document.getElementById("offerModal").classList.add("hidden");
+      localStorage.setItem("folditOfferClosed", "yes");
+    }
+
+    window.addEventListener("load", function() {
+      const closed = localStorage.getItem("folditOfferClosed");
+      if (closed === "yes") {
+        document.getElementById("offerModal").classList.add("hidden");
+      }
+    });
+  </script>
+
 </body>
 </html>
